@@ -20,7 +20,7 @@
     "typescript": "~3.4.3",
     "zone.js": "~0.9.1"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "https://github.com/bapib7/zero-node"
   },
