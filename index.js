@@ -33,6 +33,9 @@ const productSchema = new mongoose.Schema({
   'category':String,
   'images':String
 })
+app.get('/',(req,res)=>{
+  res.send("Hello")
+})
 app.post('/api/uploadfile', upload.single('image'), (req, res, next) => {
   const file = req.file
   if (!file) {
