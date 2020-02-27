@@ -4,14 +4,9 @@
   "description": "This example is so cool.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "example",
-    "heroku"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -25,6 +20,15 @@
     "typescript": "~3.4.3",
     "zone.js": "~0.9.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bapib7/zero-node"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
   "engines": {
     "node": "10.19.0",
     "npm": "6.13.4"
