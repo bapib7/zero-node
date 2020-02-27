@@ -105,5 +105,5 @@ app.put('/api/products/:id',(req,res)=>{
 })
 
 const server = http.Server(app);
-server.listen(process.env.PORT|3000);
+server.listen(process.env.PORT || 3000);
 console.log("Listining on port 3000");
