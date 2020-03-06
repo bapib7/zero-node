@@ -24,7 +24,7 @@ module.exports = (app) => {
       // res.json({
       //     'message': 'File uploaded successfully'
       // });
-  res.send(req.files);
+      res.send(req.files);
   
   });
 
