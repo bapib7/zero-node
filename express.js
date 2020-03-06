@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require("body-parser");
-const app = express();
+const bodyParser = require('body-parser');
+module.exports = (app,express) => {
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('uploads'));
@@ -12,4 +12,4 @@ app.use(function (req, res, next) {
   next();
 });
 
-module.exports.app = app;
+}
