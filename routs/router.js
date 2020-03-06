@@ -20,7 +20,7 @@ module.exports = (app) => {
 
    //app.post('/api/uploadfile', middleware.store().single('image'),controller.file);
 
-   app.post('/api/uploadfile', upload.array('image',12), (req, res, next) => {
+   app.post('/api/uploadfile', upload.single('image'), (req, res, next) => {
       // res.json({
       //     'message': 'File uploaded successfully'
       // });
