@@ -19,7 +19,7 @@ module.exports = class Controller{
       //   error.httpStatusCode = 400
       //   return next(error)
       //   }
-        res.send(res.status(500).json(error));
+        res.send(res);
       };
 
     //Get products
