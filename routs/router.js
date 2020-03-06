@@ -10,8 +10,7 @@ var storage = multer.diskStorage({
        cb(null,file.originalname)
    }
 })
-var upload = multer({storage:storage})
-
+var upload = multer({storage:storage, limits: {fileSize: 1000000}})
 controller = new Controller();
 middleware = new Middleware();
 module.exports = (app) => {
