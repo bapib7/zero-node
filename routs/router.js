@@ -17,7 +17,7 @@ module.exports = (app) => {
 
    app.get('/',controller.hello);
 
-   app.post('/api/uploadfile',upload.single('image'),controller.file);
+   app.post('/api/uploadfile',upload.array('image',12),controller.file);
 
    app.get('/api/products/',controller.products);
 
