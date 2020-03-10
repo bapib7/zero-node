@@ -1,6 +1,7 @@
 const multer = require('multer');
 const Middleware = require('./middleware');
 const Controller = require('./controllers');
+var path = require('path');
 
 var storage = multer.diskStorage({
    destination:function(req,file,cb){
@@ -19,11 +20,9 @@ module.exports = (app) => {
 
    //app.post('/api/uploadfile', middleware.store().single('image'),controller.file);
 
-   app.post('/api/uploadfile', upload.single('image'), (req, res, next) => {
-      // res.json({
-      //     'message': 'File uploaded successfully'
-      // });
-      res.send(req.files);
+   app.post('/api/uploadfile', upload.single('image'), (req, res) => {
+    console.log('files', req.files);
+    res.send(req.files);
   
   });
 
