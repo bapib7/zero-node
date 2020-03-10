@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
        cb(null,file.originalname)
    }
 })
-var upload = multer({storage:storage, limits: {fileSize: 1000000}})
+var upload = multer({storage:storage});
 controller = new Controller();
 middleware = new Middleware();
 module.exports = (app) => {
@@ -19,7 +19,7 @@ module.exports = (app) => {
 
    //app.post('/api/uploadfile', middleware.store().single('image'),controller.file);
 
-   app.post('/api/uploadfile', upload.array('image',12), (req, res, next) => {
+   app.post('/api/uploadfile', upload.single('image'), (req, res, next) => {
       // res.json({
       //     'message': 'File uploaded successfully'
       // });
