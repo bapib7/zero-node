@@ -13,13 +13,7 @@ module.exports = class Controller{
 
    //File upload.
   file(req, res, next){
-      // const file = req.file
-      // if (!file) {
-      //   const error = new Error('Please upload a file')
-      //   error.httpStatusCode = 400
-      //   return next(error)
-      //   }
-        res.send(res);
+    res.send(req.file);
       };
 
     //Get products
@@ -30,17 +24,30 @@ module.exports = class Controller{
           res.json(r);
         })
       };
+
+     //Get products with condition
+      products_con(req, res){
+        const product = productModel;
+        product.find({productprice:{$lt:56}})
+        .then(r=>{
+          res.json(r);
+        })
+      };
     
     //Post products
       postproducts(req, res){
-        data1 = productModel;
+      const data1 = productModel;
+       // res.send(req.body.color);
+
         const data = new data1({"productname":req.body.name,
         "productprice":req.body.price,
         "retailprice":req.body.rprice,
        "sku":req.body.sku,
+       "chipList":[],
         "category":req.body.category,
         "images":req.body.imagelink
       });
+      data.chipList=req.body.color
         data.save()
           .then(item=>{res.send(item)})
           .catch(err=>{res.send(err)})

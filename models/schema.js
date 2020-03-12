@@ -8,6 +8,7 @@ const {mongoose} = require("../db/dbconnection");
     'retailprice':Number,
     'sku':String,
     'category':String,
+    'chipList':[{name:String}],
     'images':String
   });
 
